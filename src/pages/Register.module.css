@@ -1,0 +1,300 @@
+.loading {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+}
+
+.page {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  padding: 40px 20px;
+  position: relative;
+}
+
+.back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.15s;
+  z-index: 10;
+}
+.back:hover { color: var(--text); }
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px 44px;
+  box-shadow: var(--shadow-md);
+}
+
+.brand {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 4px 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+
+.fieldRow {
+  display: flex;
+  gap: 12px;
+}
+
+.label {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.input {
+  width: 100%;
+  padding: 11px 14px;
+  background: #F7F9FC;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+.input:focus { outline: none; border-color: var(--green); }
+.input::placeholder { color: var(--text-muted); }
+
+.areaHeading {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.areaSub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.areaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.optional {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.detailsToggle {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--green);
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  transition: opacity 0.15s;
+}
+.detailsToggle:hover { opacity: 0.75; }
+
+/* ── Combobox ── */
+.comboWrap {
+  position: relative;
+}
+
+.comboInput {
+  width: 100%;
+  padding: 11px 32px 11px 14px;
+  background: #F7F9FC;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+.comboInput:focus { outline: none; border-color: var(--green); }
+.comboInput::placeholder { color: var(--text-muted); }
+
+.comboClear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+}
+.comboClear:hover { color: var(--text); }
+
+.comboDropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.comboOpt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 9px 12px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.comboOpt:hover { background: var(--bg); }
+.comboOptActive { background: rgba(27,110,60,0.07); font-weight: 600; }
+
+.checkmark {
+  font-size: 0.75rem;
+  color: var(--green);
+  margin-left: 4px;
+  margin-right: auto;
+  padding-left: 6px;
+}
+
+.removeX {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-left: 8px;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: color 0.1s, background 0.1s;
+}
+.removeX:hover { color: #B91C1C; background: rgba(185,28,28,0.08); }
+
+.comboAdd {
+  display: block;
+  width: 100%;
+  padding: 9px 12px;
+  background: none;
+border: none;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--green);
+  cursor: pointer;
+  font-style: italic;
+  transition: background 0.1s;
+}
+.comboAdd:hover { background: var(--bg); }
+
+.comboEmpty {
+  padding: 10px 12px;
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.error {
+  font-size: 0.85rem;
+  color: var(--priority-critical);
+  background: rgba(185, 28, 28, 0.08);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-top: 4px;
+}
+.btn:hover    { background: var(--green); color: var(--on-accent); }
+.btn:disabled { background: var(--text-muted); cursor: not-allowed; }

@@ -1,0 +1,80 @@
+/* ============================================================
+   AutoRise Brand System — Light Theme
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap');
+
+:root {
+  /* ── Brand Colors ── */
+  --navy:         #0F1F3D;
+  --navy-light:   #1A3260;
+  --green:        #1B6E3C;
+  --accent-green: #6EDFA0;
+  --white:        #FFFFFF;
+  --on-accent:    #FFFFFF; /* text color ON accent-colored surfaces — overridden per company */
+
+  /* ── Light Theme System Colors ── */
+  --bg:           #EEF2F8;
+  --surface:      #FFFFFF;
+  --border:       rgba(15, 31, 61, 0.1);
+  --text:         #0F1F3D;
+  --text-muted:   rgba(15, 31, 61, 0.5);
+  --shadow:       0 2px 8px rgba(15, 31, 61, 0.08);
+  --shadow-md:    0 4px 20px rgba(15, 31, 61, 0.12);
+
+  /* ── Priority Colors (mirrors SHRS severity palette) ── */
+  --priority-low:      #1B6E3C;
+  --priority-medium:   #C88B00;
+  --priority-high:     #C04B15;
+  --priority-critical: #B91C1C;
+
+  /* ── Status Colors ── */
+  --status-open:        #C04B15;
+  --status-inprogress:  #2563EB;
+  --status-resolved:    #1B6E3C;
+  --status-closed:      #64748B;
+
+  /* ── Typography ── */
+  --font-heading: 'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+
+  /* ── Spacing & Shape ── */
+  --radius:    8px;
+  --radius-lg: 14px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

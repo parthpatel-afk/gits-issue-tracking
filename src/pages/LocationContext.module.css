@@ -1,0 +1,432 @@
+/* ── Base layout ─────────────────────────────────────────────────────────── */
+
+.page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.loadingText {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ── Top Bar ── */
+.topBar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  background: var(--navy);
+  color: #fff;
+}
+
+.topBarLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topBarBrand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: var(--radius);
+  color: inherit;
+  text-align: left;
+  transition: background 0.15s;
+}
+.topBarBrand:hover { background: rgba(255,255,255,0.1); }
+
+.topBarLogo {
+  max-height: 26px;
+  max-width: 80px;
+  width: auto;
+  object-fit: contain;
+  /* logo chip: client logos are frequently dark or navy-outlined, which
+     disappears against the navy top bar. A white plate keeps any logo legible. */
+  background: #fff;
+  padding: 3px;
+  border-radius: 5px;
+  box-sizing: content-box;
+}
+
+.topBarCompany {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.topBarTitle {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* ── Page content (centered below top bar) ── */
+.pageContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px 36px;
+  box-shadow: var(--shadow-md);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+/* ── Banner (repeat user) ────────────────────────────────────────────────── */
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  padding: 4px 0 6px;
+}
+
+.bannerLabel {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.bannerLoc {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.01em;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.changeBtn {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 0;
+  margin-top: 2px;
+  transition: color 0.15s;
+}
+.changeBtn:hover { color: var(--text); }
+
+/* ── Form ────────────────────────────────────────────────────────────────── */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.labelRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.label {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.optional {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-style: italic;
+  font-family: var(--font-body);
+}
+
+/* ── Details toggle ──────────────────────────────────────────────────────── */
+
+.detailsToggle {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--green);
+  cursor: pointer;
+  padding: 2px 0;
+  text-align: left;
+  align-self: flex-start;
+  transition: opacity 0.15s;
+}
+.detailsToggle:hover { opacity: 0.65; }
+
+.detailFields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: slideDown 0.18s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Combobox ────────────────────────────────────────────────────────────── */
+
+.comboWrap {
+  position: relative;
+}
+
+.comboTrigger {
+  position: relative;
+}
+
+.comboInput {
+  width: 100%;
+  padding: 13px 40px 13px 14px;
+  background: #F7F9FC;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  box-sizing: border-box;
+}
+
+.comboInput::placeholder {
+  color: var(--text-muted);
+  opacity: 0.55;
+}
+
+.comboInput:focus {
+  outline: none;
+  border-color: var(--green);
+  color: var(--text);
+  cursor: text;
+}
+
+.comboInputHasValue {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.chevron {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--green);
+  pointer-events: none;
+  font-size: 0.85rem;
+}
+
+.comboDropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 200;
+  animation: dropIn 0.12s ease;
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.comboOpt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 11px 14px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.comboOpt:hover { background: var(--bg); }
+
+.comboOptActive {
+  background: rgba(27, 110, 60, 0.07);
+  font-weight: 600;
+}
+.comboOptActive:hover { background: rgba(27, 110, 60, 0.1); }
+
+.comboOptRight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.yoursTag {
+  font-size: 0.62rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  background: rgba(27, 110, 60, 0.1);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.removeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: var(--text-muted);
+  border-radius: 3px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.1s, color 0.1s;
+}
+.removeBtn:hover {
+  background: rgba(185, 28, 28, 0.08);
+  color: #B91C1C;
+}
+
+.removeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: var(--text-muted);
+  border-radius: 3px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.1s, color 0.1s;
+}
+.removeBtn:hover {
+  background: rgba(185, 28, 28, 0.08);
+  color: #B91C1C;
+}
+
+.checkmark {
+  font-size: 0.85rem;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.comboAdd {
+  display: block;
+  width: 100%;
+  padding: 11px 14px;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--border);
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--green);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.comboAdd:hover { background: rgba(27, 110, 60, 0.06); }
+
+.comboEmpty {
+  padding: 11px 14px;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── Submit button ───────────────────────────────────────────────────────── */
+
+.btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 16px;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn:hover,
+.btn:active { background: var(--green); color: var(--on-accent); }
