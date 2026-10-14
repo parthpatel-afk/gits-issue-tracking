@@ -1,5 +1,7 @@
 # GITS — Global Issue Tracking System
 
+*Snapshot of my private repository (15 commits, Apr to Aug 2026), published Aug 2026 as a code sample. It contains no client data or secrets.*
+
 **Cross-department issue routing with a full audit trail.**
 
 [**Live demo →**](https://gits.autoriseconsulting.com/autorise) · part of a multi-tenant suite built for small and mid-market operations teams
@@ -83,6 +85,8 @@ npm run dev
 ```
 
 Apply the SQL in `supabase/` to your own project first, then visit `/your-company-slug`.
+The schema builds on the `companies` and `managers` tables shared with SRTS and SHRS, which
+this repo does not create.
 
 ```bash
 npm run build     # production build
